@@ -8,6 +8,10 @@ body {
     font-size: 48px;
 }
 
+.tempText {
+    font-size: 128px;
+}
+
 .divBox {
     width: 250px;
     height: 70px;
