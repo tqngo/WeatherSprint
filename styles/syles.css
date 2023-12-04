@@ -1,0 +1,47 @@
+body {
+    background-image: url(/assets/cloud.jpg);
+    background-size: cover;
+}
+
+.locText {
+    /* font-family:; */
+    font-size: 48px;
+}
+
+.divBox {
+    width: 250px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.583);
+    border-radius: 20px;
+
+  }
+
+
+
+
+
+
+
+
+
+
+.dfd {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+/* 
+
+EOD Report
+1. Contacted client for additional information on the Figma
+2. Setup website skeleton
+3. Uploaded to GitHub */
