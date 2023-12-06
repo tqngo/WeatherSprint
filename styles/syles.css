@@ -1,15 +1,36 @@
 body {
     background-image: url(/assets/cloud.jpg);
     background-size: cover;
+    
 }
 
 .locText {
     /* font-family:; */
     font-size: 48px;
+    color: white;
+    
+}
+
+.currentText {
+    font-size: 128px;
+    color: white;
+    
+}
+
+.weatherText {
+    text-align: center;
+    font-size: 36px;
+    color: white;
 }
 
 .tempText {
-    font-size: 128px;
+    font-size: 24px;
+    color: white;
+}
+
+.forecastText {
+    font-size: 40px;
+    color: white;
 }
 
 .divBox {
@@ -21,18 +42,16 @@ body {
   }
 
 
-
-
-
-
-
-
-
-
-.dfd {
-    display: flex;
-    justify-content: space-between;
+.card {
+    background-color: #4A71BD80;
 }
+
+
+
+
+
+
+
 
 
 

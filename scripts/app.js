@@ -28,7 +28,7 @@ async function getWeather(){
     feelsLike.innerText = Math.round(data.main.feels_like)
     maxTemp.innerText = Math.round(data.main.temp_max)
     minTemp.innerText = Math.round(data.main.temp_min)
-    windSpeed.innerText = Math.round(data.wind.speed)
+    windSpeed.innerText = data.wind.speed
 
 
 }

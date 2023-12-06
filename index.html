@@ -13,15 +13,15 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col">1
-
-            </div>
-
-            <div id="locName" class="col locText">
-
-            </div>
-
             <div class="col">
+
+            </div>
+
+            <div id="locName" class="col locText d-flex justify-content-center">
+
+            </div>
+
+            <div class="col d-flex justify-content-end">
                 <div class="divBox">
                     <div class="col">
                         <img src="./assets/Search Icon.png" style="height: 40px; width: 40px;" alt="Search Icon">
@@ -32,83 +32,101 @@
                 </div>
             </div>
         </div>
+
+
         <div class="row">
-            <div id="currentTemp" style="text-align: center;" class="tempText">
+            <div class="col">
+                <div id="currentTemp" style="text-align: center;" class="currentText">
+                </div>
             </div>
         </div>
-        <div id="weatherCon" class="row">
-
-        </div>
-        <div class="row">
-            <div id="feelsLike"></div>
-        </div>
-        <div class="row">
-            <div id="maxTemp"></div>
-        </div>
-        <div class="row">
-            <div id="minTemp"></div>
-        </div>
-        <div class="row">
-            <div id="windSpeed"></div>
+        <div class="row ">
+            <div class="col">
+                <div id="weatherCon" class="weatherText">
+                </div>
+            </div>
         </div>
 
-
-
-
-
-
-
         <div class="row">
-            <div>Daily Forecast</div>
+            <div class="col-6 tempText d-flex justify-content-end">
+                <p>Feels Like:</p>
+                <div id="feelsLike" style="padding-left: 10px;"></div>
+            </div>
+
+            <div class="col tempText d-flex justify-content-start">
+                <p>Minimum Temp: </p>
+                <div id="minTemp" style="padding-left: 10px;"></div>
+            </div>
+
         </div>
+
         <div class="row">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+            <div class="col-6 tempText d-flex justify-content-end">
+                <p>Maximum Temp:</p>
+                <div id="maxTemp" style="padding-left: 10px;"></div>
+            </div>
+
+            <div class="col tempText d-flex justify-content-start">
+                <p>Wind Speed: </p>
+                <div id="windSpeed" style="padding-left: 10px;"></div>
+            </div>
+        </div>
+
+<br><br><br><br>
+
+
+
+
+
+
+        <div class="row">
+            <div class="forecastText">Daily Forecast</div>
+        </div>
+        <br><br>
+        <div class="row d-flex justify-content-around">
+            <div class="card" style="width: 230px; border-radius: 50px;">
                 <div class="card-body">
                     <h5 id="dayOne" class="card-title">Card title</h5>
+                    <img src="..." class="card-img-top" alt="...">
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+            <div class="card" style="width: 230px; border-radius: 50px;">
+
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
+                    <img src="..." class="card-img-top" alt="...">
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+            <div class="card" style="width: 230px; border-radius: 50px;">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 id="dayOne" class="card-title">Card title</h5>
+                    <img src="..." class="card-img-top" alt="...">
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+            <div class="card" style="width: 230px; border-radius: 50px;">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 id="dayOne" class="card-title">Card title</h5>
+                    <img src="..." class="card-img-top" alt="...">
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+            <div class="card" style="width: 230px; border-radius: 50px;">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 id="dayOne" class="card-title">Card title</h5>
+                    <img src="..." class="card-img-top" alt="...">
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         </div>
