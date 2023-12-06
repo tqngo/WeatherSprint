@@ -35,4 +35,12 @@ async function getWeather(){
 
 getWeather();
 
+async function getForecast(){
+    const promise = await fetch('https://api.openweathermap.org/data/2.5/forecast?lat=37.961632&lon=121.275604&units=imperial&appid=6323ec9d5f95a74e8be8d2dcf21d1e02')
+    const data = await promise.json();
 
+    console.log(data)
+
+    // dayOne.innerText = data.dt
+    // console.log(data.dt)
+}
