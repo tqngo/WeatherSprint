@@ -38,6 +38,9 @@ async function getWeather(){
     maxTemp.innerText = Math.round(data.main.temp_max);
     minTemp.innerText = Math.round(data.main.temp_min);
     windSpeed.innerText = data.wind.speed;
+    weatherIcon = data.weather[0].icon;
+    
+    console.log(data)
 
 
 }
@@ -56,8 +59,8 @@ async function GetForecast(){
     dayFour.innerText = data.list[25].dt_txt;
     dayFive.innerText = data.list[33].dt_txt;
     
-    maxTempF = Math.round(data.list[0].main.temp_max);
-    minTempF = Math.round(data.list[0].main.temp_min);
+    maxTempF.innerText = Math.round(data.list[0].main.temp_max);
+    minTempF.innerText = Math.round(data.list[0].main.temp_min);
 
 
     console.log(data.list[0].dt_txt);
