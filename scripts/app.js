@@ -9,12 +9,24 @@ let dayTwo = document.getElementById("dayTwo");
 let dayThree = document.getElementById("dayThree");
 let dayFour = document.getElementById("dayFour");
 let dayFive = document.getElementById("dayFive");
-
 let maxTempF = document.getElementById("maxTempF");
 let minTempF = document.getElementById("minTempF");
+let searchIcon = document.getElementById("searchIcon");
+let locations = document.getElementById("locations");
+
 
 navigator.geolocation.getCurrentPosition(success, errorFunc);
 
+
+    searchIcon.addEventListener('click', function(event){
+
+        locations.innerHTML = "";
+
+        
+        
+    });
+
+GetLocation();
 
 function success(position){
     console.log(position.coords.latitude);
@@ -24,13 +36,16 @@ function errorFunc(error){
     console.log(error.message);
 }
 
+
+
+
 async function GetLocation(){
     const promise = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=37.961632&lon=-121.275604&units=imperial&appid=6323ec9d5f95a74e8be8d2dcf21d1e02')
     const data = await promise.json();
 
-    location.innerText = data.sys
-    // location = data.name
-    console.log(data)
+
+    
+
 
 }
 
@@ -75,6 +90,8 @@ async function GetForecast(){
 
 
     // console.log(data.list[0].dt_txt);
+
+    console.log(data)
 
 }
 
