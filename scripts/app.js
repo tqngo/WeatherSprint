@@ -24,10 +24,22 @@ function errorFunc(error){
     console.log(error.message);
 }
 
+async function GetLocation(){
+    const promise = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=37.961632&lon=-121.275604&units=imperial&appid=6323ec9d5f95a74e8be8d2dcf21d1e02')
+    const data = await promise.json();
+
+    location.innerText = data.sys
+    // location = data.name
+    console.log(data)
+
+}
+
+GetLocation();
 
 
 
-async function getWeather(){
+
+async function GetWeather(){
     const promise = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=37.961632&lon=-121.275604&units=imperial&appid=6323ec9d5f95a74e8be8d2dcf21d1e02');
     const data = await promise.json();
 
@@ -40,18 +52,17 @@ async function getWeather(){
     windSpeed.innerText = data.wind.speed;
     weatherIcon = data.weather[0].icon;
     
-    console.log(data)
 
 
 }
 
-getWeather();
+GetWeather();
 
 async function GetForecast(){
     const promise = await fetch('https://api.openweathermap.org/data/2.5/forecast?lat=37.961632&lon=121.275604&units=imperial&appid=6323ec9d5f95a74e8be8d2dcf21d1e02')
     const data = await promise.json();
 
-    console.log(data)
+    // console.log(data)
 
     dayOne.innerText = data.list[1].dt_txt;
     dayTwo.innerText = data.list[9].dt_txt;
@@ -59,11 +70,11 @@ async function GetForecast(){
     dayFour.innerText = data.list[25].dt_txt;
     dayFive.innerText = data.list[33].dt_txt;
     
-    maxTempF.innerText = Math.round(data.list[0].main.temp_max);
-    minTempF.innerText = Math.round(data.list[0].main.temp_min);
+    // maxTempF.innerText = Math.round(data.list[0].main.temp_max);
+    // minTempF.innerText = Math.round(data.list[0].main.temp_min);
 
 
-    console.log(data.list[0].dt_txt);
+    // console.log(data.list[0].dt_txt);
 
 }
 
