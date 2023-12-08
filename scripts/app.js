@@ -24,12 +24,9 @@ function errorFunc(error){
     console.log(error.message);
 }
 
-// let searchIcon = document.createElement("button");
-//     searchIcon.innerText = searchBox;
-
-    searchIcon.addEventListener('click', function(e){
+    // searchIcon.addEventListener('click', function(e){
         
-    });
+    // });
 
 
 
@@ -80,14 +77,14 @@ async function GetForecast(){
     dayFour.innerText = data.list[25].dt_txt;
     dayFive.innerText = data.list[33].dt_txt;
     
-    tempHigh.innerText = Math.round(data.list[0].main.temp_max);
-    tempLow.innerText = Math.round(data.list[0].main.temp_min);
+    tempHigh.innerText = data.list[0].main.temp_max;
+    tempLow.innerText = data.list[0].main.temp_min;
 
-
-    // console.log(data.list[0].dt_txt);
 
     console.log(data)
 
+
+    // console.log(data.list[0].main.temp_min)
 }
 
 GetForecast();
