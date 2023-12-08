@@ -46,11 +46,11 @@ async function GetWeather(){
     const data = await promise.json();
 
     locName.innerText = data.name
-    currentTemp.innerText = Math.round(data.main.temp) + "°";;
+    currentTemp.innerText = Math.round(data.main.temp) + "°";
     weatherCon.innerText = data.weather[0].description;
-    feelsLike.innerText = Math.round(data.main.feels_like) + "°";;
-    maxTemp.innerText = Math.round(data.main.temp_max) + "°";;
-    minTemp.innerText = Math.round(data.main.temp_min) + "°";;
+    feelsLike.innerText = Math.round(data.main.feels_like) + "°";
+    maxTemp.innerText = Math.round(data.main.temp_max) + "°";
+    minTemp.innerText = Math.round(data.main.temp_min) + "°";
     windSpeed.innerText = data.wind.speed;
     weatherIcon = data.weather[0].icon;
     
@@ -63,13 +63,8 @@ GetWeather();
 async function GetForecast(){
     const promise = await fetch('https://api.openweathermap.org/data/2.5/forecast?lat=37.961632&lon=121.275604&units=imperial&appid=6323ec9d5f95a74e8be8d2dcf21d1e02')
     const data = await promise.json();
+ 
 
-
-    dayOne.innerText = data.list[0].dt_txt
-    dayTwo.innerText = data.list[9].dt_txt;
-    dayThree.innerText = data.list[17].dt_txt;
-    dayFour.innerText = data.list[25].dt_txt;
-    dayFive.innerText = data.list[33].dt_txt;
     
     tempHigh.innerText = data.list[0].main.temp_max;
     tempLow.innerText = data.list[0].main.temp_min;
@@ -90,3 +85,55 @@ async function GetForecast(){
 }
 
 GetForecast();
+
+
+function FindDay(day) {
+    switch (day) {
+        case 0 || "SUN":
+            return "Sunday";
+            break;
+        case 1 || "MON":
+            return "Monday";
+            break;
+        case 2 || "TUE":
+            return "Tuesday";
+            break;
+        case 3 || "WED":
+            return "Wednesday";
+            break;
+        case 4 || "THU":
+            return "Thursday";
+            break;
+        case 5 || "FRI":
+            return "Friday";
+            break;
+        case 6 || "SAT":
+            return "Saturday";
+            break;
+    }
+}
+function WeekDays(day) {
+    switch (day) {
+        case "Sunday":
+            return ["MON", "TUE", "WED", "THU", "FRI"];
+            break;
+        case "Monday":
+            return ["TUE", "WED", "THU", "FRI", "SAT"];
+            break;
+        case "Tuesday":
+            return ["WED", "THU", "FRI", "SAT", "SUN"];
+            break;
+        case "Wednesday":
+            return ["THU", "FRI", "SAT", "SUN", "MON"];
+            break;
+        case "Thursday":
+            return ["FRI", "SAT", "SUN", "MON", "TUE"];
+            break;
+        case "Friday":
+            return ["SAT", "SUN", "MON", "TUE", "WED"];
+            break;
+        case "Saturday":
+            return ["SUN", "MON", "TUE", "WED", "THU"];
+            break;
+    }
+}
