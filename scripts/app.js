@@ -9,24 +9,12 @@ let dayTwo = document.getElementById("dayTwo");
 let dayThree = document.getElementById("dayThree");
 let dayFour = document.getElementById("dayFour");
 let dayFive = document.getElementById("dayFive");
-let maxTempF = document.getElementById("maxTempF");
-let minTempF = document.getElementById("minTempF");
-let searchIcon = document.getElementById("searchIcon");
-let locations = document.getElementById("locations");
+let tempHigh = document.getElementById("tempHigh");
+let tempLow = document.getElementById("tempLow");
+
 
 
 navigator.geolocation.getCurrentPosition(success, errorFunc);
-
-
-    searchIcon.addEventListener('click', function(event){
-
-        locations.innerHTML = "";
-
-        
-        
-    });
-
-GetLocation();
 
 function success(position){
     console.log(position.coords.latitude);
@@ -35,6 +23,13 @@ function success(position){
 function errorFunc(error){
     console.log(error.message);
 }
+
+// let searchIcon = document.createElement("button");
+//     searchIcon.innerText = searchBox;
+
+    searchIcon.addEventListener('click', function(e){
+        
+    });
 
 
 
@@ -59,11 +54,11 @@ async function GetWeather(){
     const data = await promise.json();
 
     locName.innerText = data.name
-    currentTemp.innerText = Math.round(data.main.temp);
+    currentTemp.innerText = Math.round(data.main.temp) + "°";;
     weatherCon.innerText = data.weather[0].description;
-    feelsLike.innerText = Math.round(data.main.feels_like);
-    maxTemp.innerText = Math.round(data.main.temp_max);
-    minTemp.innerText = Math.round(data.main.temp_min);
+    feelsLike.innerText = Math.round(data.main.feels_like) + "°";;
+    maxTemp.innerText = Math.round(data.main.temp_max) + "°";;
+    minTemp.innerText = Math.round(data.main.temp_min) + "°";;
     windSpeed.innerText = data.wind.speed;
     weatherIcon = data.weather[0].icon;
     
@@ -79,14 +74,14 @@ async function GetForecast(){
 
     // console.log(data)
 
-    dayOne.innerText = data.list[1].dt_txt;
+    dayOne.innerText = data.list[1].dt_txt
     dayTwo.innerText = data.list[9].dt_txt;
     dayThree.innerText = data.list[17].dt_txt;
     dayFour.innerText = data.list[25].dt_txt;
     dayFive.innerText = data.list[33].dt_txt;
     
-    // maxTempF.innerText = Math.round(data.list[0].main.temp_max);
-    // minTempF.innerText = Math.round(data.list[0].main.temp_min);
+    tempHigh.innerText = Math.round(data.list[0].main.temp_max);
+    tempLow.innerText = Math.round(data.list[0].main.temp_min);
 
 
     // console.log(data.list[0].dt_txt);
