@@ -24,11 +24,6 @@ function errorFunc(error){
     console.log(error.message);
 }
 
-    // searchIcon.addEventListener('click', function(e){
-        
-    // });
-
-
 
 
 async function GetLocation(){
@@ -69,9 +64,8 @@ async function GetForecast(){
     const promise = await fetch('https://api.openweathermap.org/data/2.5/forecast?lat=37.961632&lon=121.275604&units=imperial&appid=6323ec9d5f95a74e8be8d2dcf21d1e02')
     const data = await promise.json();
 
-    // console.log(data)
 
-    dayOne.innerText = data.list[1].dt_txt
+    dayOne.innerText = data.list[0].dt_txt
     dayTwo.innerText = data.list[9].dt_txt;
     dayThree.innerText = data.list[17].dt_txt;
     dayFour.innerText = data.list[25].dt_txt;
@@ -80,11 +74,19 @@ async function GetForecast(){
     tempHigh.innerText = data.list[0].main.temp_max;
     tempLow.innerText = data.list[0].main.temp_min;
 
+    tempHigh2.innerText = data.list[0].main.temp_max;
+    tempLow2.innerText = data.list[0].main.temp_min;
+    tempHigh3.innerText = data.list[0].main.temp_max;
+    tempLow3.innerText = data.list[0].main.temp_min;
+    tempHigh4.innerText = data.list[0].main.temp_max;
+    tempLow4.innerText = data.list[0].main.temp_min;
+    tempHigh5.innerText = data.list[0].main.temp_max;
+    tempLow5.innerText = data.list[0].main.temp_min;
+
 
     console.log(data)
 
 
-    // console.log(data.list[0].main.temp_min)
 }
 
 GetForecast();
