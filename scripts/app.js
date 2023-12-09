@@ -51,7 +51,7 @@ async function GetWeather(){
     feelsLike.innerText = Math.round(data.main.feels_like) + "°";
     maxTemp.innerText = Math.round(data.main.temp_max) + "°";
     minTemp.innerText = Math.round(data.main.temp_min) + "°";
-    windSpeed.innerText = data.wind.speed;
+    windSpeed.innerText = data.wind.speed + " mph";
     weatherIcon = data.weather[0].icon;
     
 
@@ -63,23 +63,21 @@ GetWeather();
 async function GetForecast(){
     const promise = await fetch('https://api.openweathermap.org/data/2.5/forecast?lat=37.961632&lon=121.275604&units=imperial&appid=6323ec9d5f95a74e8be8d2dcf21d1e02')
     const data = await promise.json();
- 
-
     
     tempHigh.innerText = data.list[0].main.temp_max;
     tempLow.innerText = data.list[0].main.temp_min;
 
     tempHigh2.innerText = data.list[0].main.temp_max;
     tempLow2.innerText = data.list[0].main.temp_min;
+
     tempHigh3.innerText = data.list[0].main.temp_max;
     tempLow3.innerText = data.list[0].main.temp_min;
+
     tempHigh4.innerText = data.list[0].main.temp_max;
     tempLow4.innerText = data.list[0].main.temp_min;
+
     tempHigh5.innerText = data.list[0].main.temp_max;
     tempLow5.innerText = data.list[0].main.temp_min;
-
-
-    console.log(data)
 
 
 }
@@ -87,7 +85,7 @@ async function GetForecast(){
 GetForecast();
 
 
-function FindDay(day) {
+function ForecastDays(day) {
     switch (day) {
         case 0 || "SUN":
             return "Sunday";
@@ -112,7 +110,7 @@ function FindDay(day) {
             break;
     }
 }
-function WeekDays(day) {
+function ForecastDays(day) {
     switch (day) {
         case "Sunday":
             return ["MON", "TUE", "WED", "THU", "FRI"];
